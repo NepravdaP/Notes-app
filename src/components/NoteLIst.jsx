@@ -9,7 +9,7 @@ const NoteLIst = ({ notes, setNotes, findHashtags, selectedTags }) => {
         .filter((note) => {
           const hashTags = note.text.match(/#[a-z]+/gi);
           return selectedTags.length > 0
-            ? selectedTags.filter((el) => hashTags.includes(el)).length > 0
+            ? selectedTags?.filter((el) => !!hashTags?.includes(el))?.length > 0
             : true;
         })
         .map((el) => (
