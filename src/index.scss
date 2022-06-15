@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+//vars
+$mainFont: "Roboto", sans-serif;
+$fontSizeP: 16px;
+$fontSizeH: 36px;
+$NoteBgColor: #437fc7;
+$NoteTextColor: #ffffff;
+$NoteDateColor: #6998d3;
+$BtnHoverColor: #3a75bc;
+$NewNoteBgColor: #dae4f0;
+
+//mixins
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fdfdff;
+  font-family: $mainFont;
+  color: #0d0d0f;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $NoteBgColor;
+  padding: 0 2%;
+  color: $NoteTextColor;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 2% 2%;
+}
+h1 {
+  font-weight: bold;
+  font-size: $fontSizeH;
+}
+.btn-block {
+  display: flex;
+}
+.note-controls {
+  display: flex;
+  justify-content: space-between;
+}
+.note-date {
+  font-size: $fontSizeP;
+  color: $NoteDateColor;
+  margin-top: 10px;
+  &:hover {
+    color: $NoteTextColor;
+    transition: 0.4s;
+    cursor: default;
+  }
+}
+
+.control-btn {
+  background-color: transparent;
+  border: 0;
+  color: $NoteDateColor;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  &:hover {
+    background-color: $BtnHoverColor;
+    color: $NoteTextColor;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+}
+
+.note-btn {
+  height: 20px;
+}
+.trash-btn {
+  transform: translate(-5%, 0);
+  &:hover {
+    color: $NoteTextColor;
+    transition: 0.4s;
+  }
+}
+
+.edit-btn {
+  transform: translate(-20%, 0);
+  color: $NoteTextColor;
+  margin-left: 10px;
+}
+.note-text {
+  font-size: $fontSizeP;
+  text-align: left;
+  color: $NoteTextColor;
+  background-color: transparent;
+  border: none;
+  font-family: $mainFont;
+  font-size: $fontSizeP;
+  height: 100%;
+  outline: none;
+  &::placeholder {
+    color: $NoteTextColor;
+    background-color: transparent;
+    border: none;
+    border-color: transparent;
+  }
+}
+
+.plus-wrapper {
+  @include flexCenter();
+
+  height: 200px;
+  min-width: 350px;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: $NewNoteBgColor;
+  color: $NoteBgColor;
+  &:hover {
+    background-color: $NoteBgColor;
+    color: $NoteTextColor;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+}
+
+.plus-icon {
+  height: 80px;
+}
+.note-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.note-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: $NoteBgColor;
+}
+.edit-note {
+  margin-left: auto;
+}
+
+.tag-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  gap: 20px;
+}
+.tag-wrapper {
+  @include flexCenter();
+
+  border: 1px solid #0d0d0f;
+  min-width: 110px;
+  height: 28px;
+  border-radius: 16px;
+  &:hover {
+    background-color: $NoteBgColor;
+    color: $NoteTextColor;
+    border-color: $NoteBgColor;
+    transition: 0.4s;
+  }
+}
+
+.tag-round {
+  background-color: $NoteBgColor;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  margin: 0 5px;
+}
+
+.tag-active {
+  background-color: $NoteBgColor;
+  color: $NoteTextColor;
+  border-color: $NoteBgColor;
+}
+.tag-round-active {
+  background-color: $NoteBgColor;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  margin-left: 5px;
+}
