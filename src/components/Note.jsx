@@ -6,7 +6,7 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Note = ({ note, notes, setNotes, findHashtags }) => {
+const Note = ({ note, notes, setNotes }) => {
   const [isEdited, setisEdited] = useState(false);
   const [editText, setEditText] = useState(note.text);
   const handleEditActive = () => {

@@ -13,13 +13,7 @@ const NoteLIst = ({ notes, setNotes, findHashtags, selectedTags }) => {
             : true;
         })
         .map((el) => (
-          <Note
-            note={el}
-            key={el.id}
-            notes={notes}
-            setNotes={setNotes}
-            findHashtags={findHashtags}
-          />
+          <Note note={el} key={el.id} notes={notes} setNotes={setNotes} />
         ))}
       {selectedTags.length === 0 && (
         <NewNote notes={notes} setNotes={setNotes} />
